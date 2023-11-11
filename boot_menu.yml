@@ -1,5 +1,5 @@
 ublue_variants:
-  - label: ublue-os/startingpoint
+  - label: achhabra2/fw13-amd-kinoite
     ks: /kickstart/ublue-os.ks
     flavors:
-      - label: startingpoint
+      - label: fw13-amd-kinoite
