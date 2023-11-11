@@ -28,6 +28,7 @@ modules:
       - starship
       - powertop
       - tailscale
+      - fprintd
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
@@ -59,6 +60,5 @@ modules:
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
-      - update_kernel_params.sh
       - rpm_ostree_install.sh
       - signing.sh
