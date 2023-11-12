@@ -29,6 +29,9 @@ modules:
       - powertop
       - tailscale
       - fprintd
+      - fwupd
+      - distrobox
+      - fish
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
@@ -60,6 +63,7 @@ modules:
       - Brave: com.brave.Browser
       - Armcord: xyz.armcord.ArmCord
       - GIMP: org.gimp.GIMP
+      - AudioTube: org.kde.audiotube
 
   - type: script
     scripts:

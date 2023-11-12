@@ -5,4 +5,4 @@
 # Add boot parameters needed for a Framework 13 AMD laptop
 fw-amd:
   #!/usr/bin/env bash
-  rpm-ostree kargs --append="amdgpu.sg_display=0"
+  rpm-ostree kargs --append="amdgpu.sg_display=0" --append="amd_iommu=off" --append="amd_pstate=guided"
