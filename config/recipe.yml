@@ -40,6 +40,7 @@ modules:
       - justfiles # add "!include /usr/share/ublue-os/just/100-bling.just"
                   # in your custom.just (added by default) or local justfile
       - ublue-os-wallpapers
+      - 1password
       
   - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
                 #  will be installed and set up
@@ -56,6 +57,9 @@ modules:
       - VSCodium: com.vscodium.codium
       - Handbrake: fr.handbrake.ghb
       - PikaBackup: org.gnome.World.PikaBackup
+      - Brave: com.brave.Browser
+      - Armcord: xyz.armcord.ArmCord
+      - GIMP: org.gimp.GIMP
 
   - type: script
     scripts:
