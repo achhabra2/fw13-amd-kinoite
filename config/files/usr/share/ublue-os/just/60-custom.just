@@ -3,18 +3,31 @@
 # Include some of your custom scripts here!
 
 # Add boot parameters needed for a Framework 13 AMD laptop
-fw-amd:
+fw13-amd:
   #!/usr/bin/env bash
   echo 'Adding Recommended Kernel Parameters for Framework 13 AMD'
-  echo 'Setting amdgpu.sg_display=0, amd_iommu=off, amd_pstate=guided'
-  rpm-ostree kargs --append="amdgpu.sg_display=0" --append="amd_iommu=off" --append="amd_pstate=guided"
+  rpm-ostree kargs --append="cpufreq.default_governor=powersave" --append="pcie_aspm.policy=powersupersave" --append="initcall_blacklist=cpufreq_gov_userspace_init"
 
+# Run amd s2idle script for debugging sleep issues
 check_sleep:
   #!/usr/bin/env bash
   echo 'Running amd_s2idle.py'
-  /usr/bin/python3 /usr/share/ublue-os/scripts/amd_s2idle.py
+  sudo /usr/bin/python3 /usr/share/ublue-os/scripts/amd_s2idle.py
 
+# Run amd psr script for debugging psr issues
 check_psr:
   #!/usr/bin/env bash
   echo 'Running psr.py'
   /usr/bin/python3 /usr/share/ublue-os/scripts/psr.py
+
+# Set EPP to balance_power
+epp_balanced:
+  echo 'balance_power' | sudo tee /sys/devices/system/cpu/cpufreq/policy*/energy_performance_preference
+
+# Set EPP to power saving mode
+epp_power:
+  echo 'power' | sudo tee /sys/devices/system/cpu/cpufreq/policy*/energy_performance_preference
+
+# Set EPP to performance mode
+epp_performance:
+  echo 'performance' | sudo tee /sys/devices/system/cpu/cpufreq/policy*/energy_performance_preference
