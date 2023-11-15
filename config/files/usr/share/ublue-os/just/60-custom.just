@@ -20,13 +20,17 @@ check_psr:
   echo 'Running psr.py'
   /usr/bin/python3 /usr/share/ublue-os/scripts/psr.py
 
-# Set EPP to balance_power
-epp_balanced:
-  echo 'balance_power' | sudo tee /sys/devices/system/cpu/cpufreq/policy*/energy_performance_preference
-
 # Set EPP to power saving mode
 epp_power:
   echo 'power' | sudo tee /sys/devices/system/cpu/cpufreq/policy*/energy_performance_preference
+
+# Set EPP to balance power mode
+epp_balance_power:
+  echo 'balance_power' | sudo tee /sys/devices/system/cpu/cpufreq/policy*/energy_performance_preference
+
+# Set EPP to balance performance mode
+epp_balance_performance:
+  echo 'balance_performance' | sudo tee /sys/devices/system/cpu/cpufreq/policy*/energy_performance_preference
 
 # Set EPP to performance mode
 epp_performance:

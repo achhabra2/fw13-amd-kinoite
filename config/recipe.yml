@@ -32,6 +32,7 @@ modules:
       - fwupd
       - distrobox
       - fish
+      - kernel-tools
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
@@ -69,4 +70,5 @@ modules:
     scripts:
       # this sets up the proper policy & signing files for signed images to work
       - rpm_ostree_install.sh
+      - permissions.sh
       - signing.sh
