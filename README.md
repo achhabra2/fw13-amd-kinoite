@@ -3,6 +3,7 @@
 This is a customized Universal Blue Kinoite Image for the Framework 13 AMD edition. 
 
 ### Changes to Kinoite-Main Image
+- [11/17] Add Calibrated ICC Profiles
 - Add PCIE and USB power saving configurations to /etc/udev/rules.d/
 - Add wifi power saving configuration to /etc/sysctl.d/
 - Add wifi power saving configuration for intel wifi to /etc/udev/modprobe.d/
@@ -20,3 +21,15 @@ This is a customized Universal Blue Kinoite Image for the Framework 13 AMD editi
 - Install powertop, kernel-tools, fprintd, fwupd, tailscale, 1password and other apps by default
 - Install AMDGPU_TOP by default
 - Make some commonly installed Flatpaks available to install on first boot, these are completely optional
+
+
+### Installing
+
+To install if you are already on Silverblue / Kinoite or an ostree install:
+
+`rpm-ostree rebase ostree-unverified-registry:ghcr.io/achhabra2/fw13-amd-kinoite:latest`
+
+Reboot and then run:
+
+`rpm-ostree rebase ostree-image-signed:docker://ghcr.io/achhabra2/fw13-amd-kinoite:latest`
+
