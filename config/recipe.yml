@@ -64,7 +64,6 @@ modules:
       - Brave: com.brave.Browser
       - Armcord: xyz.armcord.ArmCord
       - GIMP: org.gimp.GIMP
-      - AudioTube: org.kde.audiotube
 
   - type: script
     scripts:

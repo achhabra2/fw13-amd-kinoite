@@ -18,7 +18,7 @@ check_sleep:
 check_psr:
   #!/usr/bin/env bash
   echo 'Running psr.py'
-  /usr/bin/python3 /usr/share/ublue-os/scripts/psr.py
+  sudo /usr/bin/python3 /usr/share/ublue-os/scripts/psr.py
 
 # Set EPP to power saving mode
 epp_power:
