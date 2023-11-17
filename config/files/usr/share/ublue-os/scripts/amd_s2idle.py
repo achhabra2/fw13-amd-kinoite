@@ -585,7 +585,8 @@ class DistroPackage:
         elif distro == "fedora":
             if not self.rpm:
                 return False
-            installer = ["dnf", "install", "-y", self.rpm]
+            # installer = ["dnf", "install", "-y", self.rpm]
+            installer = ["echo", "skipping dependency"]
         else:
             if not self.pip:
                 return False
