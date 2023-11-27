@@ -10,8 +10,8 @@ echo 'Updating to latest linux-firmware from git'
 
 git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 
-cp linux-firmware/* /usr/lib/firmware/
+cp -rf linux-firmware/* /usr/lib/firmware/
 
 rpm-ostree initramfs
 
-rm -r linux-firmware
+rm -rf linux-firmware
