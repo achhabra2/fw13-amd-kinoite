@@ -45,3 +45,17 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
     rm -rf /tmp/* /var/* && ostree container commit
+
+# Run dracut to build a new initrd
+RUN export KERNEL_VERSION="$(rpm -qa kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')" && \
+    stock_arguments=$(lsinitrd "/lib/modules/${KERNEL_VERSION}/initramfs.img"  | grep '^Arguments: ' | sed 's/^Arguments: //') && \
+    mkdir -p /tmp/dracut /var/roothome && \
+    bash <(/usr/bin/echo "dracut $stock_arguments") && \
+    rm -rf /var/* /tmp/*  && \
+    ostree container commit
+
+# Move the new initrd into place while keeping the stock initrd in the image for reference.
+RUN export KERNEL_VERSION="$(rpm -qa kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')" && \
+    mv -v "/lib/modules/${KERNEL_VERSION}/initramfs.img" "/lib/modules/${KERNEL_VERSION}/initramfs.stock.img" && \
+    mv -v /boot/initramfs*.img "/lib/modules/${KERNEL_VERSION}/initramfs.img" && \
+    ostree container commit
