@@ -77,5 +77,6 @@ modules:
       # this sets up the proper policy & signing files for signed images to work
       - rpm_ostree_install.sh
       - permissions.sh
-      - power_profiles_daemon.sh
+      # - power_profiles_daemon.sh
+      - update_firmware.sh
       - signing.sh
