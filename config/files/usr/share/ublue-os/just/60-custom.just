@@ -6,7 +6,7 @@
 fw13-amd:
   #!/usr/bin/env bash
   echo 'Adding Recommended Kernel Parameters for Framework 13 AMD'
-  rpm-ostree kargs --append="cpufreq.default_governor=powersave" --append="pcie_aspm.policy=powersupersave" --append="initcall_blacklist=cpufreq_gov_userspace_init"
+  rpm-ostree kargs --append="cpufreq.default_governor=powersave" --append="pcie_aspm.policy=powersupersave" --append="rtc_cmos.use_acpi_alarm=1"
 
 # Run amd s2idle script for debugging sleep issues
 check_sleep:
