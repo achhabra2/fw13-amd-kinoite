@@ -6,12 +6,6 @@
 set -oue pipefail
 
 # Your code goes here.
-echo 'Installing Patched Power Profiles Daemon'
+echo 'Replacing Power Profiles Daemon with Patched Version'
 
-git clone https://gitlab.freedesktop.org/xdbob/power-profiles-daemon.git
-
-cd power-profiles-daemon
-git checkout -b multi-drivers
-
-meson _build -Dprefix=/usr
-ninja -v -C _build install
+rpm-ostree override replace --experimental --freeze --from repo='copr:copr.fedorainfracloud.org:achhabra:power-profiles-daemon' power-profiles-daemon
