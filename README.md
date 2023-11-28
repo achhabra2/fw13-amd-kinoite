@@ -3,6 +3,9 @@
 This is a customized Universal Blue Kinoite Image for the Framework 13 AMD edition. 
 
 ### Changes to Kinoite-Main Image
+- [11/28] Add custom COPR for power-profiles-daemon which supports the EPP Patches
+- [11/28] Update latest linux-firmware from git on build (for amdgpu, mediatek wifi, etc)
+- [11/28] Adjust on_ac / on_battery scripts to use power-profiles-daemon instead of manually setting epp hints
 - [11/17] Add Calibrated ICC Profiles
 - Add PCIE and USB power saving configurations to /etc/udev/rules.d/
 - Add wifi power saving configuration to /etc/sysctl.d/
