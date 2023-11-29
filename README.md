@@ -11,15 +11,15 @@ Tl;dr - [Kinoite Image](https://github.com/achhabra2/fw13-amd-kinoite/pkgs/conta
 - [11/28] Update latest linux-firmware from git on build (for amdgpu, mediatek wifi, etc)
 - [11/28] Adjust on_ac / on_battery scripts to use power-profiles-daemon instead of manually setting epp hints
 - [11/28] Add AMD ROCM libraries and default environment variables
-- [11/17] Add Calibrated ICC Profiles
+- [11/17] Add Calibrated ICC Profile, see instructions on how to apply
 - Add PCIE and USB power saving configurations to /etc/udev/rules.d/
 - Add wifi power saving configuration to /etc/sysctl.d/
 - Add wifi power saving configuration for intel wifi to /etc/udev/modprobe.d/
 - Add AMD s2idle and psr debugging scripts to /usr/share/ublue-os/scripts
-- Add udev rules to change AMD EPP Hints on AC Power / Battery
+- Add udev rules to change power saving tweaks on AC Power / Battery
 - Add sysctl.d rules for `vm.dirty_writeback_centisecs` and `kernel.nmi_watchdog` parameters for power saving
 - Make scripts / kernel parameters available via `just` script
-  - `just fw13-amd` to update default kernel parameters (cpufreq.default_governor=powersave, pcie_aspm.policy=powersupersave)
+  - `just fw13-amd` to update default kernel parameters (cpufreq.default_governor=powersave, pcie_aspm.policy=powersupersave, rtc_cmos.use_acpi_alarm=1)
   - `just check_sleep` to run amd_s2idle.py debug script
   - `just check_psr` to run psr.py debug script
   - `just epp_power` to set AMD EPP Hints to Power Saving
@@ -35,6 +35,8 @@ Tl;dr - [Kinoite Image](https://github.com/achhabra2/fw13-amd-kinoite/pkgs/conta
 
 Note this image has been tested with UMA set to Game Optimized, more info [here](https://knowledgebase.frame.work/en_us/allocate-additional-ram-to-igpu-framework-laptop-13-amd-ryzen-7040-series-BkpPUPQa). 
 
+---
+
 To install if you are already on Silverblue / Kinoite or an ostree install:
 
 `rpm-ostree rebase ostree-unverified-registry:ghcr.io/achhabra2/fw13-amd-kinoite:latest`
@@ -43,6 +45,8 @@ Reboot and then run:
 
 `rpm-ostree rebase ostree-image-signed:docker://ghcr.io/achhabra2/fw13-amd-kinoite:latest`
 
+---
+
 If you want to try the Silverblue images:
 
 `rpm-ostree rebase ostree-unverified-registry:ghcr.io/achhabra2/fw13-amd-silverblue:latest`
@@ -50,6 +54,10 @@ If you want to try the Silverblue images:
 Reboot and then run:
 
 `rpm-ostree rebase ostree-image-signed:docker://ghcr.io/achhabra2/fw13-amd-silverblue:latest`
+
+---
+
+To install from scrach you can find the ISO [here](https://github.com/achhabra2/fw13-amd-kinoite/releases/tag/auto-iso). Use your favorite media writer, I have used Balena Etcher. 
 
 ### Post Install
 
