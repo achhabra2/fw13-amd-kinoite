@@ -8,4 +8,4 @@ set -oue pipefail
 # Your code goes here.
 echo 'Setting Environment Variable for ROCM'
 
-echo 'HSA_OVERRIDE_GFX_VERSION=11.0.0' >> /usr/etc/profile
+echo 'export HSA_OVERRIDE_GFX_VERSION=11.0.0' >> /usr/etc/profile.d/hsa_override.sh
