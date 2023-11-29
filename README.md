@@ -1,8 +1,12 @@
-## Custom Kinoite Image for Framework 13 AMD
+## Custom Kinoite / Silverblue Images for Framework 13 AMD
 
-This is a customized Universal Blue Kinoite Image for the Framework 13 AMD edition. 
+This is a customized Universal Blue Image for the Framework 13 AMD edition. 
 
-### Changes to Kinoite-Main Image
+Update 11/28/23 - Silverblue based builds are now available. See installation below. 
+
+Tl;dr - [Kinoite Image](https://github.com/achhabra2/fw13-amd-kinoite/pkgs/container/fw13-amd-kinoite), [Silverblue Image](https://github.com/achhabra2/fw13-amd-kinoite/pkgs/container/fw13-amd-silverblue), enjoy. More details below. 
+
+### Changes to Kinoite / Silverblue Main Images
 - [11/28] Add custom COPR for power-profiles-daemon which supports the EPP Patches
 - [11/28] Update latest linux-firmware from git on build (for amdgpu, mediatek wifi, etc)
 - [11/28] Adjust on_ac / on_battery scripts to use power-profiles-daemon instead of manually setting epp hints
@@ -39,10 +43,19 @@ Reboot and then run:
 
 `rpm-ostree rebase ostree-image-signed:docker://ghcr.io/achhabra2/fw13-amd-kinoite:latest`
 
+If you want to try the Silverblue images:
+
+`rpm-ostree rebase ostree-unverified-registry:ghcr.io/achhabra2/fw13-amd-silverblue:latest`
+
+Reboot and then run:
+
+`rpm-ostree rebase ostree-image-signed:docker://ghcr.io/achhabra2/fw13-amd-silverblue:latest`
+
 ### Post Install
 
 - Run `just fw13-amd` to set kernel parameters
-- Run `just epp_power` or another power setting to what you require -- note this does not persist a reboot
+- ~~Run `just epp_power` or another power setting to what you require -- note this does not persist a reboot~~
+  - UPDATE - as of the 11/28 build you don't need to do this anymore
 - (Optional) If you don't want Flatpak based browsers the Brave repo is included, you could also use Firefox-wayland
   - `rpm-ostree install brave-browser` or `rpm-ostree install firefox-wayland`
 - (Optional) Use `rpm-ostree kargs --append=""` for any other kernel parameters you need (eg. `amdgpu.sg_display=0`, `amd_iommu=off`, `rtc_cmos.use_acpi_alarm=1`, etc)
