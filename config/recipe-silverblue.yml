@@ -36,6 +36,9 @@ modules:
       - kernel-tools # Needed for cpupower and turbostat
       - python3-pyudev # Needed for AMD S2Idle Debug Script
       - acpica-tools # Needed for AMD S2Idle Debug Script
+      - rocm-hip
+      - rocm-opencl
+      - rocm-clinfo
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
@@ -75,4 +78,5 @@ modules:
       - permissions.sh
       - power_profiles_daemon.sh
       - update_firmware.sh
+      - environment.sh
       - signing.sh
