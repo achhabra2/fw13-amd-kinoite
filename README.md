@@ -3,6 +3,7 @@
 This is a customized Universal Blue Image for the Framework 13 AMD edition. 
 
 Update 11/28/23 - Silverblue based builds are now available. See installation below. 
+Update 11/29/23 - There was an issue with the 11/28 build where /etc/profile got overridden and causes issues, please make sure you upgrade. Previous builds were fine. 
 
 Tl;dr - [Kinoite Image](https://github.com/achhabra2/fw13-amd-kinoite/pkgs/container/fw13-amd-kinoite), [Silverblue Image](https://github.com/achhabra2/fw13-amd-kinoite/pkgs/container/fw13-amd-silverblue), enjoy. More details below. 
 
@@ -19,7 +20,8 @@ Tl;dr - [Kinoite Image](https://github.com/achhabra2/fw13-amd-kinoite/pkgs/conta
 - Add udev rules to change power saving tweaks on AC Power / Battery
 - Add sysctl.d rules for `vm.dirty_writeback_centisecs` and `kernel.nmi_watchdog` parameters for power saving
 - Make scripts / kernel parameters available via `just` script
-  - `just fw13-amd` to update default kernel parameters (cpufreq.default_governor=powersave, pcie_aspm.policy=powersupersave, rtc_cmos.use_acpi_alarm=1)
+  - `just fw13-amd` to update default kernel parameters (cpufreq.default_governor=powersave, pcie_aspm.policy=powersupersave, ~~rtc_cmos.use_acpi_alarm=1~~)
+  - [11/29] The `rtc_cmos.use_acpi_alarm=1` parameter is no longer needed as of kernel 6.6.2
   - `just check_sleep` to run amd_s2idle.py debug script
   - `just check_psr` to run psr.py debug script
   - `just epp_power` to set AMD EPP Hints to Power Saving
