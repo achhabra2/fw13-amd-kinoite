@@ -3,3 +3,9 @@ ublue_variants:
     ks: /kickstart/ublue-os.ks
     flavors:
       - label: fw13-amd-kinoite
+      info: Kinoite for Framework
+  - label: achhabra2/fw13-amd-silverblue
+    ks: /kickstart/ublue-os.ks
+    flavors:
+      - label: fw13-amd-silverblue
+      info: Silverblue for Framework
