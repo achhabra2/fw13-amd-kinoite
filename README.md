@@ -1,13 +1,17 @@
 ## Custom Kinoite / Silverblue Images for Framework 13 AMD
 
-This is a customized Universal Blue Image for the Framework 13 AMD edition. 
+This is a customized [Universal Blue](https://universal-blue.org/) Image for the Framework 13 AMD edition. 
 
 Update 11/28/23 - Silverblue based builds are now available. See installation below. 
+
 Update 11/29/23 - There was an issue with the 11/28 build where /etc/profile got overridden and causes issues, please make sure you upgrade. Previous builds were fine. 
 
 Tl;dr - [Kinoite Image](https://github.com/achhabra2/fw13-amd-kinoite/pkgs/container/fw13-amd-kinoite), [Silverblue Image](https://github.com/achhabra2/fw13-amd-kinoite/pkgs/container/fw13-amd-silverblue), enjoy. More details below. 
 
-### Changes to Kinoite / Silverblue Main Images
+### Changes to Kinoite / Silverblue [Main Images](https://universal-blue.org/images/main/)
+
+NOTE - Images are re-built daily with all of the latest and greatest updates, and include all of the benefits from the Universal Blue main images. 
+
 - [11/28] Add custom COPR for power-profiles-daemon which supports the EPP Patches
 - [11/28] Update latest linux-firmware from git on build (for amdgpu, mediatek wifi, etc)
 - [11/28] Adjust on_ac / on_battery scripts to use power-profiles-daemon instead of manually setting epp hints
