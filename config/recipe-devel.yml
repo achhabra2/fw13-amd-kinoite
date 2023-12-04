@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: fw13-amd-kinoite
+name: fw13-amd-kinoite-devel
 # description will be included in the image's metadata
 description: My customized version of Kinoite for the FW13 AMD
 
@@ -74,6 +74,7 @@ modules:
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
+      - mesa_git.sh
       - amdgpu_top.sh
       - permissions.sh
       - power_profiles_daemon.sh
