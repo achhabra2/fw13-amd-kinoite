@@ -12,6 +12,8 @@ Tl;dr - [Kinoite Image](https://github.com/achhabra2/fw13-amd-kinoite/pkgs/conta
 
 NOTE - Images are re-built daily with all of the latest and greatest updates, and include all of the benefits from the Universal Blue main images. 
 
+- [12/3] Added `fw13-amd-kinoite-devel` image back, includes mesa-git packages for testing purposes
+- [12/3] Added audio power saving udev rule
 - [11/28] Add custom COPR for power-profiles-daemon which supports the EPP Patches
 - [11/28] Update latest linux-firmware from git on build (for amdgpu, mediatek wifi, etc)
 - [11/28] Adjust on_ac / on_battery scripts to use power-profiles-daemon instead of manually setting epp hints
