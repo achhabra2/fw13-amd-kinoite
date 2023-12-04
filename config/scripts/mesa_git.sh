@@ -8,9 +8,7 @@ set -oue pipefail
 # Your code goes here.
 echo 'Setting Up Mesa Drivers from Git'
 
-rpm-ostree remove mesa-va-drivers-freeworld
-
-rpm-ostree override replace --experimental \
+rpm-ostree override replace --experimental --freeze \
     --from repo=copr:copr.fedorainfracloud.org:xxmitsu:mesa-git \
     mesa-filesystem \
     mesa-libxatracker \
