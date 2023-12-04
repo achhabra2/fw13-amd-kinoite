@@ -1,10 +1,10 @@
 # image will be published to ghcr.io/<user>/<name>
-name: fw13-amd-silverblue
+name: fw13-amd-kinoite
 # description will be included in the image's metadata
-description: My customized version of Silverblue for the FW13 AMD
+description: My customized version of Kinoite for the FW13 AMD
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/kinoite-main
 image-version: 39 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -25,6 +25,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       - https://copr.fedorainfracloud.org/coprs/achhabra/power-profiles-daemon/repo/fedora-%OS_VERSION%/achhabra-power-profiles-daemon-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/xxmitsu/mesa-git/repo/fedora-%OS_VERSION%/xxmitsu-mesa-git-fedora-%OS_VERSION%.repo
     install:
       - starship
       - powertop

@@ -43,7 +43,6 @@ modules:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
       - android-udev-rules
-      - nvtop
 
   - type: bling # configure what to pull in from ublue-os/bling
     install:
@@ -74,7 +73,7 @@ modules:
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
-      - rpm_ostree_install.sh
+      - amdgpu_top.sh
       - permissions.sh
       - power_profiles_daemon.sh
       - update_firmware.sh
