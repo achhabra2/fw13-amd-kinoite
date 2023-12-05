@@ -35,3 +35,4 @@ epp_balance_performance:
 # Set EPP to performance mode
 epp_performance:
   echo 'performance' | sudo tee /sys/devices/system/cpu/cpufreq/policy*/energy_performance_preference
+
