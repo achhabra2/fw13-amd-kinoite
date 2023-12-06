@@ -4,7 +4,7 @@
 # Only the branch called `live` is published.
 
 
-name: build-ublue
+name: build-ublue-devel
 on: # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
   schedule:
     - cron: "30 16 * * *"
@@ -15,8 +15,8 @@ on: # https://docs.github.com/en/actions/using-workflows/events-that-trigger-wor
       - main
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
-      - "config/recipe-devel.yml"
-  pull_request:
+      - "config/recipe.yml"
+      - "config/recipe-silverblue.yml"
   workflow_dispatch:
 
 env:
@@ -40,8 +40,7 @@ jobs:
         # Add recipes for all the images you want to build here.
         # Don't add module configuration files, you will get errors.
         recipe:
-          - recipe.yml
-          - recipe-silverblue.yml
+          - recipe-devel.yml
 # !!!
 
     steps:
