@@ -76,6 +76,6 @@ modules:
       - amdgpu_top.sh
       - permissions.sh
       - power_profiles_daemon.sh
-      - update_firmware.sh
+      # - update_firmware.sh
       - environment.sh
       - signing.sh
