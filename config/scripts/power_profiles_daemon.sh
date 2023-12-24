@@ -8,4 +8,4 @@ set -oue pipefail
 # Your code goes here.
 echo 'Replacing Power Profiles Daemon with Patched Version'
 
-rpm-ostree override replace --experimental --freeze --from repo='copr:copr.fedorainfracloud.org:achhabra:power-profiles-daemon' power-profiles-daemon
+rpm-ostree override replace --experimental --freeze --from repo='copr:copr.fedorainfracloud.org:mariolimonciello:power-profiles-daemon' power-profiles-daemon
