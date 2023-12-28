@@ -41,6 +41,7 @@ modules:
       - rocm-opencl
       - rocm-clinfo
       - plasma-lookandfeel-nobara
+      - mpv
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
@@ -56,9 +57,7 @@ modules:
   - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
                 #  will be installed and set up
     custom-flatpaks: # this section is optional
-      - Celluloid: io.github.celluloid_player.Celluloid
       - Krita: org.kde.krita
-      - mpv: io.mpv.Mpv
       - Flatseal: com.github.tchx84.Flatseal
       - OBSStudio: com.obsproject.Studio
       - Obsidian: md.obsidian.Obsidian
